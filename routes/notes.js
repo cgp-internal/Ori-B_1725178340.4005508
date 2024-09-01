@@ -3,10 +3,10 @@ const { getNotes, createNote, getNote, updateNote, deleteNote } = require('./con
 
 const notesRouter = express.Router();
 
-notesRouter.get('/', getNotes);
-notesRouter.post('/', createNote);
-notesRouter.get('/:id', getNote);
-notesRouter.put('/:id', updateNote);
-notesRouter.delete('/:id', deleteNote);
+notesRouter.get('/', getNotes());
+notesRouter.post('/', createNote());
+notesRouter.get('/:id', getNote());
+notesRouter.put('/:id', updateNote());
+notesRouter.delete('/:id', deleteNote());
 
 module.exports = notesRouter;
