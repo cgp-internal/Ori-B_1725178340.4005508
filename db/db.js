@@ -3,7 +3,7 @@ const sqlite3 = require('sqlite3').verbose();
 let db;
 
 function initDatabase() {
-  db = new sqlite3.Database('db/notes.db', (err) => {
+  db = new sqlite3.Database('./notes.db', (err) => {
     if (err) {
       console.error(err.message);
       throw err;
@@ -15,4 +15,4 @@ function initDatabase() {
 
 initDatabase();
 
-module.exports = { db };
+module.exports = db;
