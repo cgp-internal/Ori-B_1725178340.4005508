@@ -1,0 +1,85 @@
+{
+    "app.js": {
+        "description": "Main entry point for the Notes application. Sets up the Express server, defines routes, and starts the server.",
+        "dependencies": {
+            "routes/notes.js": [
+                "notesRouter"
+            ]
+        }
+    },
+    "routes/notes.js": {
+        "description": "Defines routes for CRUD operations on Notes.",
+        "dependencies": {
+            "controllers/notes.js": [
+                "getNotes",
+                "createNote",
+                "getNote",
+                "updateNote",
+                "deleteNote"
+            ]
+        },
+        "exposes": [
+            "notesRouter"
+        ]
+    },
+    "controllers/notes.js": {
+        "description": "Contains logic for handling CRUD operations on Notes.",
+        "dependencies": {
+            "services/notesService.js": [
+                "getAllNotes",
+                "createNote",
+                "getNote",
+                "updateNote",
+                "deleteNote"
+            ]
+        },
+        "exposes": [
+            "getNotes",
+            "createNote",
+            "getNote",
+            "updateNote",
+            "deleteNote"
+        ]
+    },
+    "services/notesService.js": {
+        "description": "Contains functions for interacting with the SQLite database.",
+        "dependencies": {
+            "db/db.js": [
+                "db"
+            ]
+        },
+        "exposes": [
+            "getAllNotes",
+            "createNote",
+            "getNote",
+            "updateNote",
+            "deleteNote"
+        ]
+    },
+    "db/db.js": {
+        "description": "Sets up the SQLite database connection.",
+        "dependencies": {},
+        "exposes": [
+            "db"
+        ]
+    },
+    "models/Note.js": {
+        "description": "Defines the structure of a Note.",
+        "dependencies": {},
+        "exposes": [
+            "Note"
+        ]
+    },
+    "README.md": {
+        "description": "README with basic documentation and 'how to run' guide"
+    },
+    ".gitignore": {
+        "description": ".gitignore with node-modules and cache files"
+    },
+    "package.json": {
+        "description": "Project metadata and dependencies"
+    },
+    "db/notes.db": {
+        "description": "SQLite database file"
+    }
+}
