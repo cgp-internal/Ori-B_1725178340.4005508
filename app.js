@@ -4,9 +4,9 @@ const notesRouter = require('./routes/notes');
 const app = express();
 app.use(express.json());
 
-app.use('/notes', notesRouter);
+app.use('/notes', async () => await notesRouter);
 
-if (typeof notesRouter === 'undefined') {
+if (!(notesRouter instanceof Promise) && typeof notesRouter === 'undefined') {
   throw new Error('Notes router is not defined');
 }
 
