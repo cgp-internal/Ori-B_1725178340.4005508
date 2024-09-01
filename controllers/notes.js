@@ -1,4 +1,4 @@
-const { getAllNotes, createNote, getNote, updateNote, deleteNote } = require('./services/notesService');
+const { getAllNotes, createNote, getNote, updateNote, deleteNote } = require('../services/notesService');
 
 async function getNotes(req, res) {
   try {
