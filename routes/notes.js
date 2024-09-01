@@ -1,12 +1,12 @@
 const express = require('express');
-const notesController = require('./controllers/notes');
+const { getNotes, createNote, getNote, updateNote, deleteNote } = require('./controllers/notes');
 
 const notesRouter = express.Router();
 
-notesRouter.get('/', notesController.getNotes);
-notesRouter.post('/', notesController.createNote);
-notesRouter.get('/:id', notesController.getNote);
-notesRouter.put('/:id', notesController.updateNote);
-notesRouter.delete('/:id', notesController.deleteNote);
+notesRouter.get('/', getNotes);
+notesRouter.post('/', createNote);
+notesRouter.get('/:id', getNote);
+notesRouter.put('/:id', updateNote);
+notesRouter.delete('/:id', deleteNote);
 
 module.exports = notesRouter;
