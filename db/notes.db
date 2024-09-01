@@ -1,0 +1,3 @@
+This file is a SQLite database file, so it does not require any specific content. It will be initialized and managed by the SQLite library when the application connects to it. Therefore, the content of this file is empty:
+
+```
